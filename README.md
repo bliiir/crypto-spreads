@@ -1,6 +1,8 @@
 # Crypto-spread API
 
-This script finds assets that are on both Bitfinex and Poloniex and the price spread between the two exchanges and offers the data up through a simple api
+This script finds assets that are on both Bitfinex and Poloniex and the price spread between the two exchanges and offers the data up through a simple api using the [Nomics api](https://p.nomics.com/cryptocurrency-bitcoin-api/)
+
+<img src="https://www.dropbox.com/s/67qmawnjd6mejuv/Screenshot%202018-10-01%2023.06.26.png?raw=1" alt="drawing" width="500"/>
 
 ## HTTP request and query method overview
 
