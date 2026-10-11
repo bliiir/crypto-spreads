@@ -9,9 +9,6 @@ encoding = 'utf-8'
 # set port
 port = 8000
 
-#create object of MyApp
-# my_obj = crypto_spread.MyApp()
-
 def application_(environ, start_response):
 
     try:

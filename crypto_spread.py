@@ -1,6 +1,11 @@
-import urllib.request, json, requests, datetime, mysql.connector as mc
+import urllib.request
+import json
+import requests
+import datetime
+import mysql.connector as mc
 from local_settings import *
 from operator import itemgetter
+
 
 def dispatch(environ):
     """Main function that executes all the sub functions and returns the result to the webserver which then returns it via the api
@@ -16,16 +21,12 @@ def dispatch(environ):
     method = environ['REQUEST_METHOD']
     path = environ['PATH_INFO']
 
-    update() # [WORKS] Query the crypto endpoints and update the database
+    update() # Query the Nomics crypto endpoints and update the database
 
-    bits = split_query(query) # [WORKS] Split the query into a dictionary
-    # print(bits)
-    sql_str = make_sql(bits[0], bits[1], bits[2]) # [WORKS] Assemble SQL from the bits dictionary
-    # print(sql_str)
-    db_read = exe_sql(method, path, sql_str) # [WORKS] Execute SQL
-    # print(db_read)
-    return db_read # Return the result of the database query
-    # return "hello"
+    bits = split_query(query)  # Split the query into a dictionary
+    sql_str = make_sql(bits[0], bits[1], bits[2])  # Assemble SQL from the bits dictionary
+    db_read = exe_sql(method, path, sql_str)  # Execute the sql_str from the previous line
+    return db_read  # Return the result of the database query
 
 
 def split_query(query):
